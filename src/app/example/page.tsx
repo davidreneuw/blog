@@ -38,7 +38,7 @@ export default function Example() {
     <div>
       <div className="bg-[url('tulips.jpg')] h-48 w-full backdrop-filter backdrop-blur-sm bg-opacity-10"></div>
       <div className="flex flex-row w-full justify-center">
-        <div className="flex flex-col w-1/2">
+        <div className="flex flex-col w-11/12 md:w-1/2">
           <div className="my-8">
             <h1 className="text-5xl">
               Where to Stay in Brisbane: The Best Neighborhoods for Your Visit

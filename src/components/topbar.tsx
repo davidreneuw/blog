@@ -14,7 +14,7 @@ import { SideSheet } from "./sidesheet";
 
 export function Topbar() {
   return (
-    <header className="bg-gray-800">
+    <header className="bg-gray-800 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -34,10 +34,10 @@ export function Topbar() {
                 Home
               </a>
               <a
-                href="/about"
+                href="/example"
                 className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
               >
-                About
+                Example
               </a>
             </nav>
           </div>

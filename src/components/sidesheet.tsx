@@ -61,10 +61,10 @@ export function SideSheet() {
               Home
             </a>
             <a
-              href="/about"
+              href="/example"
               className="text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-xl text-start"
             >
-              About
+              Example
             </a>
           </nav>
         </SheetContent>

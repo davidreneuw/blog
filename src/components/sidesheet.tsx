@@ -14,6 +14,7 @@ import {
   SignedIn,
   SignedOut,
   SignInButton,
+  SignOutButton,
   UserButton,
 } from "@clerk/nextjs";
 
@@ -42,8 +43,9 @@ export function SideSheet() {
                 </SignInButton>
               </SignedOut>
               <SignedIn>
-                <div className="flex self-center mb-4">
+                <div className="flex flex-col self-center mb-4">
                   <UserButton showName />
+                  <SignOutButton />
                 </div>
               </SignedIn>
             </ClerkLoaded>

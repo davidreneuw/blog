@@ -20,11 +20,13 @@ export function Topbar() {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img
-                className="h-10 w-10 color-white"
-                src="/bird.svg"
+                className="h-10 w-10 color-white text-white"
+                src="/ripple-white.svg"
                 alt="Logo"
               />
-              <h1 className="text-white text-lg ml-2">Musings by Carlos</h1>
+              <h1 className="text-white text-lg ml-2">
+                Time flows as ripples on a pond
+              </h1>
             </a>
             <nav className="hidden md:block ml-10 space-x-4">
               <a

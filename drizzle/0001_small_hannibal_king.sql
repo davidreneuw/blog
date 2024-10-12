@@ -1,0 +1,1 @@
+ALTER TABLE "posts" ALTER COLUMN "date" SET DATA TYPE text;

@@ -19,7 +19,7 @@ export default async function EditPage({
     <AuthorizedView allowedRoles={["admin"]}>
       <div className="flex flex-row w-full justify-center">
         <div className="flex flex-col w-11/12 md:w-1/2 py-8">
-          <h1 className="text-3xl font-bold mb-4">Edit post "{post.title}"</h1>
+          <h1 className="text-3xl font-bold mb-4">Edit post {post.title}</h1>
           <EditForm params={{ post, existingTags }} />
         </div>
       </div>

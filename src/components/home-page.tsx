@@ -36,7 +36,7 @@ export function HomePage() {
               <div className="text-center md:text-left">
                 <h2 className="text-2xl font-bold mb-2">Jane Doe</h2>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  Welcome to my corner of the internet! I'm a philosopher,
+                  Welcome to my corner of the internet! Im a philosopher,
                   writer, and eternal student of life. This blog is where I
                   share my thoughts on mindfulness, the nature of time, and the
                   beauty of slow living.

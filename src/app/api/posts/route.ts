@@ -1,6 +1,6 @@
 import { db } from "@/lib/drizzle";
 import { PostsTable } from "@/lib/schema";
-import { GetPostRequest, PostInsert, PostRequest } from "@/types/global";
+import { PostInsert } from "@/types/global";
 import { NextRequest, NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -24,10 +24,10 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function PUT(request: PostRequest) {
-  return Response.json({ data: "world" });
+export async function PUT(request: NextRequest) {
+  return NextResponse.json({ data: "world" });
 }
 
-export async function DELETE(request: GetPostRequest) {
-  return Response.json({ data: "world" });
+export async function DELETE(request: NextRequest) {
+  return NextResponse.json({ data: "world" });
 }

@@ -15,10 +15,10 @@ import {
 
 export function HomePage() {
   return (
-    <div className="min-h-screen min-w-screen bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen w-full bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800">
       <main className="container mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-800 dark:text-gray-100">
-          Time flows as ripples on a pond
+          Time flows as ripples on a still pond
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           Exploring the ebb and flow of life, one thought at a time.
@@ -56,8 +56,11 @@ export function HomePage() {
               <Image
                 src="/placeholder.svg?height=800&width=600"
                 alt="The Illusion of Time"
-                layout="fill"
-                objectFit="cover"
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "cover",
+                }}
               />
               <Badge className="absolute top-2 right-2 bg-white/80 text-gray-800 dark:bg-gray-800/80 dark:text-gray-100">
                 <HeartIcon className="w-4 h-4 mr-1 inline-block" />
@@ -115,13 +118,19 @@ export function HomePage() {
                 likes: 723,
               },
             ].map((post, index) => (
-              <Card className="h-full bg-white dark:bg-gray-800 shadow hover:shadow-md transition-shadow duration-300 overflow-hidden">
+              <Card
+                key={index}
+                className="h-full bg-white dark:bg-gray-800 shadow hover:shadow-md transition-shadow duration-300 overflow-hidden"
+              >
                 <div className="relative w-full aspect-[2/1]">
                   <Image
                     src={post.image}
                     alt={post.title}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    sizes="100vw"
+                    style={{
+                      objectFit: "cover",
+                    }}
                   />
                   <Badge className="absolute top-2 right-2 bg-white/80 text-gray-800 dark:bg-gray-800/80 dark:text-gray-100">
                     <HeartIcon className="w-4 h-4 mr-1 inline-block" />

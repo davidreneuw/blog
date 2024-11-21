@@ -1,16 +1,14 @@
-"use client";
-
 import {
   ClerkLoaded,
-  ClerkLoading,
   SignedIn,
   SignedOut,
   SignInButton,
   UserButton,
 } from "@clerk/nextjs";
 
+import AuthorizedView from "@/components/authorized-view";
+import { SideSheet } from "@/components/layout/sidesheet";
 import { dark } from "@clerk/themes";
-import { SideSheet } from "./sidesheet";
 
 export function Topbar() {
   return (
@@ -24,8 +22,8 @@ export function Topbar() {
                 src="/ripple-white.svg"
                 alt="Logo"
               />
-              <h1 className="text-white text-lg ml-2">
-                Time flows as ripples on a pond
+              <h1 className="text-white text-lg ml-2 text-nowrap">
+                Time flows as ripples on a still pond
               </h1>
             </a>
             <nav className="hidden md:block ml-10 space-x-4">
@@ -36,20 +34,29 @@ export function Topbar() {
                 Home
               </a>
               <a
-                href="/example"
+                href="/about"
                 className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
               >
-                Example
+                About
               </a>
+              <a
+                href="/explore"
+                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Explore
+              </a>
+              <AuthorizedView allowedRoles={["admin"]}>
+                <a
+                  href="/write"
+                  className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Write
+                </a>
+              </AuthorizedView>
             </nav>
           </div>
           <SideSheet />
           <div className="hidden md:block">
-            <ClerkLoading>
-              <button className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-                Sign in
-              </button>
-            </ClerkLoading>
             <ClerkLoaded>
               <SignedOut>
                 <SignInButton>

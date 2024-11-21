@@ -1,8 +1,10 @@
-import { Topbar } from "@/components/topbar";
+import { MainContainer } from "@/components/layout/main-container";
+import { Topbar } from "@/components/layout/topbar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,7 +28,10 @@ export default function RootLayout({
         <html lang="en">
           <body className={inter.className}>
             <Topbar />
-            {children}
+            <MainContainer>
+              <Toaster />
+              {children}
+            </MainContainer>
           </body>
         </html>
       </TooltipProvider>

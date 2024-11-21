@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Sheet,
   SheetContent,
@@ -18,6 +16,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 
+import AuthorizedView from "@/components/authorized-view";
 import { RxHamburgerMenu } from "react-icons/rx";
 export function SideSheet() {
   return (
@@ -30,22 +29,20 @@ export function SideSheet() {
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>Musings by Carlos</SheetTitle>
-            <SheetDescription>A blog by Carlos Delos Santos</SheetDescription>
-          </SheetHeader>
-          <nav className="flex flex-col mt-4">
             <ClerkLoaded>
               <SignedOut>
                 <SignInButton>
-                  <button className="text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-xl text-start">
+                  <button className="text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-md text-start">
                     Sign in
                   </button>
                 </SignInButton>
               </SignedOut>
               <SignedIn>
-                <div className="flex flex-col self-center mb-4">
+                <div className="flex flex-row gap-2">
                   <UserButton showName />
-                  <SignOutButton />
+                  <div className="text-md">
+                    <SignOutButton />
+                  </div>
                 </div>
               </SignedIn>
             </ClerkLoaded>
@@ -54,18 +51,36 @@ export function SideSheet() {
                 Sign in
               </button>
             </ClerkLoading>
+            <SheetTitle>Time flows as ripples on a still pond</SheetTitle>
+            <SheetDescription>A blog by Carlos Delos Santos</SheetDescription>
+          </SheetHeader>
+          <nav className="flex flex-col mt-4">
             <a
               href="/"
-              className="text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-xl text-start"
+              className="hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
             >
               Home
             </a>
             <a
-              href="/example"
-              className="text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-xl text-start"
+              href="/about"
+              className="hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
             >
-              Example
+              About
             </a>
+            <a
+              href="/explore"
+              className="hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Explore
+            </a>
+            <AuthorizedView allowedRoles={["admin"]}>
+              <a
+                href="/write"
+                className="hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Write
+              </a>
+            </AuthorizedView>
           </nav>
         </SheetContent>
       </div>
